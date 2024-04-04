@@ -1,18 +1,18 @@
 'use client';
 
 import { useChat } from 'ai/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function Chat() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [passwd, setPasswd] = useState('')
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
-  const handlePasswdChange = (e) => {
+  const handlePasswdChange = (e:any) => {
     setPasswd(e.target.value)
   }
 
-  const handleLogIn = (e) => {
+  const handleLogIn = (e:any) => {
     e.preventDefault()
     if (passwd === process.env.NEXT_PUBLIC_FAKE_USER_PASSWORD) {
       setLoggedIn(true)
