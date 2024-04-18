@@ -2,7 +2,7 @@
 const nextConfig = {
   basePath: "/my-chatbot",
   output: "export",
-  reactStrictMode: true,
+  reactStrictMode: true
 };
 
 module.exports = nextConfig;
