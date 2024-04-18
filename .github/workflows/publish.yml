@@ -30,11 +30,13 @@ jobs:
         with:
           static_site_generator: next
 
+      - name: Generate environment configuration file
+        run: |
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+          echo "NEXT_PUBLIC_FAKE_USER_PASSWORD=${{ secrets.NEXT_PUBLIC_FAKE_USER_PASSWORD }}" >> .env
+
       - name: Build with Next.js 🏗️
         run: npx next build
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          NEXT_PUBLIC_FAKE_USER_PASSWORD: ${{ secrets.NEXT_PUBLIC_FAKE_USER_PASSWORD }}
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
