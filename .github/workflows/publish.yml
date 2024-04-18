@@ -32,6 +32,9 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npx next build
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NEXT_PUBLIC_FAKE_USER_PASSWORD: ${{ secrets.NEXT_PUBLIC_FAKE_USER_PASSWORD }}
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
