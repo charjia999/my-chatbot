@@ -3,8 +3,8 @@ const nextConfig = {
   basePath: "/my-chatbot",
   output: "export",
   experimental: {
-    serverActions: true,
-  }
+    serverActions: false,
+  },
 };
 
 module.exports = nextConfig;
